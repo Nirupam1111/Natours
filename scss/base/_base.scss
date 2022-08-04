@@ -1,0 +1,63 @@
+*,
+*::after
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;   //1rem = 10px; 10px/16px=62.5%
+
+    @include respond(tab-land){
+        font-size: 56.25%;   //1rem=9px 
+    }
+    @include respond(tab-port){
+        font-size: 50%;  //1rem=8px 8/16=50%
+    }
+    @include respond(phone){
+        font-size: 50%;
+    }
+    @include respond(big-desktop){
+        font-size: 75%;   //1rem=12px 
+    }
+
+    
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 5px;
+        z-index: -100;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, rgb(171, 178, 188) 0%,rgb(171, 178, 188) 25%, rgb(40, 180, 133) 25%,rgb(40, 180, 133) 50%, rgba(162, 27, 225, 0.8) 50%, rgba(162, 27, 225, 0.8) 75%, rgba(27, 36, 48, .9) 75%, rgba(27, 36, 48, .9) 100%);
+        border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgb(40, 180, 133);
+    }
+    
+    ::selection {
+        color: white;
+        background: rgba(40, 180, 133, .6);
+    }
+    
+    
+}
+
+body{
+    box-sizing: border-box;
+    padding: 3rem;    
+
+    @include respond(tab-port){
+        padding: 0;
+        margin: 0;
+    }
+
+    @include respond(phone){
+        padding: 0;
+    }
+
+}
